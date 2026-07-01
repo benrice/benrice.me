@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Projects</h1>
+        <p>Things I am building, testing, or thinking through.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container project-list">
+        <article class="project-card">
+            <h2>Personal Flask Site</h2>
+            <p>
+                A lightweight Flask website running on AWS Lambda and API Gateway.
+            </p>
+        </article>
+
+        <article class="project-card">
+            <h2>Reporting API Demo</h2>
+            <p>
+                A Python and JavaScript demo app for exploring transaction reporting APIs.
+            </p>
+        </article>
+
+        <article class="project-card">
+            <h2>Edgewood MUD</h2>
+            <p>
+                A text-based RPG platform inspired by old-school MUDs and tabletop roleplaying.
+            </p>
+        </article>
+    </div>
+</section>
+{% endblock %}

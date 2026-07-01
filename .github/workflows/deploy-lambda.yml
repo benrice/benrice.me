@@ -1,0 +1,46 @@
+name: Deploy Flask Lambda site
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Build Lambda package
+        run: |
+          python -m pip install --upgrade pip
+          mkdir package
+          pip install -r requirements.txt -t package
+          cp -r *.py package/
+          if [ -d templates ]; then cp -r templates package/; fi
+          if [ -d static ]; then cp -r static package/; fi
+          cd package
+          zip -r ../lambda-package.zip .
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v6.1.2
+        with:
+          role-to-assume: arn:aws:iam::349489272689:role/GitHubActionsBenriceLambdaDeployRole
+          aws-region: us-east-1
+
+      - name: Deploy to Lambda
+        run: |
+          aws lambda update-function-code \
+            --function-name benrice-me-site \
+            --zip-file fileb://lambda-package.zip

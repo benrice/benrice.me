@@ -37,7 +37,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v6.1.2
         with:
           role-to-assume: arn:aws:iam::349489272689:role/GitHubActionsBenriceLambdaDeployRole
-          aws-region: us-east-1
+          aws-region: us-west-2
 
       - name: Deploy to Lambda
         run: |

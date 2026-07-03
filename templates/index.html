@@ -2,24 +2,25 @@
 
 {% block content %}
 <section class="hero">
-    <div class="container">
-        <p class="eyebrow">Writer · Technologist · Builder</p>
+    <p class="eyebrow">Writer · Technologist · Builder</p>
+
+    <hgroup>
         <h1>Benjamin Rice</h1>
-        <p class="hero-text">
+        <p>
             I build software, explore ideas, and write about technology, literature,
             spirituality, and the strange experience of being human in a digital world.
         </p>
+    </hgroup>
 
-        <div class="hero-actions">
-            <a class="button" href="/projects">View Projects</a>
-            <a class="button secondary" href="/about">About Me</a>
-        </div>
-    </div>
+    <p class="hero-actions">
+        <a role="button" href="{{ url_for('projects') }}">View Projects</a>
+        <a role="button" class="secondary" href="{{ url_for('about') }}">About Me</a>
+    </p>
 </section>
 
 <section class="section">
-    <div class="container grid">
-        <article class="card">
+    <div class="grid">
+        <article>
             <h2>Software</h2>
             <p>
                 Experiments with Python, AWS, Flask, serverless architecture,
@@ -27,7 +28,7 @@
             </p>
         </article>
 
-        <article class="card">
+        <article>
             <h2>Writing</h2>
             <p>
                 Fiction, essays, spiritual reflections, and notes on literature,
@@ -35,7 +36,7 @@
             </p>
         </article>
 
-        <article class="card">
+        <article>
             <h2>Projects</h2>
             <p>
                 Personal projects, prototypes, and working notes from things I am

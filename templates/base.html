@@ -5,30 +5,35 @@
     <title>{{ title or "Ben Rice" }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container nav-container">
-            <a class="site-name" href="/">Ben Rice</a>
+    <header class="container site-header">
+        <nav>
+            <ul>
+                <li>
+                    <strong>
+                        <a class="site-name" href="{{ url_for('home') }}">Ben Rice</a>
+                    </strong>
+                </li>
+            </ul>
 
-            <nav class="site-nav">
-                <a href="/" class="{{ 'active' if active_page == 'home' else '' }}">Home</a>
-                <a href="/about" class="{{ 'active' if active_page == 'about' else '' }}">About</a>
-                <a href="/projects" class="{{ 'active' if active_page == 'projects' else '' }}">Projects</a>
-                <a href="/contact" class="{{ 'active' if active_page == 'contact' else '' }}">Contact</a>
-            </nav>
-        </div>
+            <ul>
+                <li><a href="{{ url_for('home') }}" class="{{ 'active' if active_page == 'home' else '' }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}" class="{{ 'active' if active_page == 'about' else '' }}">About</a></li>
+                <li><a href="{{ url_for('projects') }}" class="{{ 'active' if active_page == 'projects' else '' }}">Projects</a></li>
+                <li><a href="{{ url_for('contact') }}" class="{{ 'active' if active_page == 'contact' else '' }}">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
+    <main class="container">
         {% block content %}{% endblock %}
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; {{ 2026 }} Ben Rice</p>
-        </div>
+    <footer class="container site-footer">
+        <p>&copy; 2026 Ben Rice</p>
     </footer>
 </body>
 </html>

@@ -47,4 +47,54 @@
         </article>
     </div>
 </section>
+
+<section class="section">
+    <div class="container">
+        <div id="now-playing" class="spotify-card">
+            Loading Spotify...
+        </div>
+    </div>
+</section>
+
+<script>
+async function loadNowPlaying() {
+    const container = document.getElementById("now-playing");
+
+    try {
+        const response = await fetch("/api/now-playing");
+        const data = await response.json();
+
+        if (!data.is_playing) {
+            container.innerHTML = `
+                <h3>Currently listening to:</h3>
+                <p>Nothing playing right now.</p>
+            `;
+            return;
+        }
+
+        container.innerHTML = `
+            <h3>Currently listening to:</h3>
+            <div class="spotify-now-playing">
+                <img src="${data.album_art}" alt="Album art">
+                <div>
+                    <strong>${data.title}</strong>
+                    <p>${data.artist}<br/>
+                        <em>${data.album}</em></p>
+                    <a href="${data.spotify_url}" target="_blank" rel="noopener noreferrer">
+                        Open in Spotify
+                    </a>
+                </div>
+            </div>
+        `;
+    } catch (error) {
+        container.innerHTML = `
+            <h2>Spotify</h2>
+            <p>Could not load Spotify status.</p>
+        `;
+        console.error(error);
+    }
+}
+
+loadNowPlaying();
+</script>
 {% endblock %}

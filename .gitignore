@@ -28,3 +28,6 @@ package/
 # OS files
 .DS_Store
 Thumbs.db
+
+get_spotify_refresh_token.py
+test_spotify_refresh.py

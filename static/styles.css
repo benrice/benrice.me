@@ -51,3 +51,23 @@ nav a.active {
     font-size: 0.9rem;
     opacity: 0.75;
 }
+
+.spotify-card {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: #f5f5f5;
+}
+
+.spotify-now-playing {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.spotify-now-playing img {
+    width: 96px;
+    height: 96px;
+    border-radius: 8px;
+    object-fit: cover;
+}

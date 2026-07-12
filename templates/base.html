@@ -7,6 +7,24 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        (function(n,i,v,r,s,c,x,z){x=window.AwsRumClient={q:[],n:n,i:i,v:v,r:r,c:c};window[n]=function(c,p){x.q.push({c:c,p:p});};z=document.createElement('script');z.async=true;z.src=s;document.head.insertBefore(z,document.head.getElementsByTagName('script')[0]);})(
+            'cwr',
+            'd8dd15e3-0781-4f8b-b03f-9870738b98b0',
+            '1.0.0',
+            'us-west-2',
+            'https://client.rum.us-east-1.amazonaws.com/1.19.0/cwr.js',
+            {
+            sessionSampleRate: 1 ,
+            // identityPoolId: "us-west-2:ab40fb95-7d56-4622-b53e-0e2b880fbf15" ,
+            endpoint: "https://dataplane.rum.us-west-2.amazonaws.com" ,
+            telemetries: ["performance","errors","http"] ,
+            allowCookies: true ,
+            enableXRay: false ,
+            signing: false // If you have a public resource policy and wish to send unsigned requests please set this to false
+            }
+        );
+    </script>
 </head>
 <body>
     <header class="container site-header">

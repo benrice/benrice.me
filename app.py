@@ -23,6 +23,12 @@ def about():
         active_page="about"
     )
 
+@app.route("/about/more")
+def about_more():
+    return render_template(
+        "about_more.html",
+        title="More About | Ben Rice"
+    )
 
 @app.route("/projects")
 def projects():

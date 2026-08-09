@@ -53,6 +53,11 @@ def load_topic(topic_slug):
         "content": html_content
     }
 
+@app.before_request
+def log_request():
+    print(f"REQUEST PATH: {request.path}")
+    print(f"REQUEST URL: {request.url}")
+
 @app.route("/about/more/<topic_slug>")
 def more_topic(topic_slug):
     topic = load_topic(topic_slug)

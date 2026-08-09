@@ -30,6 +30,7 @@ jobs:
           cp -r *.py package/
           if [ -d templates ]; then cp -r templates package/; fi
           if [ -d static ]; then cp -r static package/; fi
+          if [ -d content ]; then cp -r content package/; fi
           cd package
           zip -r ../lambda-package.zip .
 

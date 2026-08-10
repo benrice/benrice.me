@@ -26,10 +26,8 @@ TOPICS_DIR = Path(__file__).parent / "content" / "topics"
 def load_topic(topic_slug):
     topic_path = TOPICS_DIR / f"{topic_slug}.md"
 
-    print(f"TOPIC: {topic_slug}")
     print(f"TOPIC FILE: {topic_path}")
     print(f"FILE EXISTS: {topic_path.exists()}")
-    print(f"CURRENT DIRECTORY: {Path.cwd()}")
 
     if not topic_path.exists():
         return None

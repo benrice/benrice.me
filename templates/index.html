@@ -65,9 +65,33 @@ async function loadNowPlaying() {
         const data = await response.json();
 
         if (!data.is_playing) {
+            const recentTracks = data.recently_played || [];
+
+            if (recentTracks.length === 0) {
+                container.innerHTML = `
+                    <h2>Spotify</h2>
+                    <p>Nothing playing right now.</p>
+                `;
+                return;
+            }
+
             container.innerHTML = `
-                <h3>Currently listening to:</h3>
-                <p>Nothing playing right now.</p>
+                <h2>Recently listened to:</h2>
+                <div class="spotify-recent-list">
+                    ${recentTracks.map(track => `
+                        <div class="spotify-recent-track">
+                            ${track.album_art ? `<img src="${track.album_art}" alt="Album art for ${track.album}">` : ""}
+                            <div>
+                                <h3>${track.title}</h3>
+                                <p>${track.artist}</p>
+                                <p><em>${track.album}</em></p>
+                                <a href="${track.spotify_url}" target="_blank" rel="noopener noreferrer">
+                                    Open in Spotify
+                                </a>
+                            </div>
+                        </div>
+                    `).join("")}
+                </div>
             `;
             return;
         }

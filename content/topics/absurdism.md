@@ -1,0 +1,6 @@
+---
+title: Absurdism
+---
+[Absurdism](https://philosopedia.org/absurdism-meaning-your-guide-to-embracing-life-s-contradictions/) is the belief that human life is contradictory in that humans have this innate desire to find meaning and purpose in life and that the Universe offers no such meaning. It is existential in nature. However, while the existentialist believes that one can find purpose by creating one's own, the absurdist feels that, while you can create something meaningful to you, it is still purposeless. That sounds pretty negative, but it is better than the nihilists who believe there is neither purpose nor meaning. The absurdist believes you may as well enjoy the ride since you are already here. In fact, the absurdist believes that since you are free from having purpose, you can live more freely and with more passion.
+
+I have been searching for my own purpose for years now or some sort of meaning in life. Ultimately, I think what would give my life meaning is to relieve suffering in others. Lord knows I have already caused my share of suffering, including in myself. To what end does that serve? I do not really know. Maybe there is no purpose to it other than to relieve suffering, an end in itself.
